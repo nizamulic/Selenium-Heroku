@@ -10,6 +10,6 @@ driver = webdriver.Chrome(os.environ.get("CHROMEDRIVER_PATH"), options=chrome_op
 driver.get("http://139.144.20.91:9000")
 print(driver.title)
 #driver find all element with a tag
-elems = driver.find_elements_by_xpath("//a[@href]")
+elems = driver.find_elements(By.XPATH, "//a[@href]")
 for elem in elems:
     print(elem.get_attribute("href"))
