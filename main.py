@@ -7,5 +7,9 @@ chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--no-sandbox")
 driver = webdriver.Chrome(os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
-driver.get("http://www.python.org")
+driver.get("http://139.144.20.91:9000")
 print(driver.title)
+#driver find all element with a tag
+elems = driver.find_elements_by_xpath("//a[@href]")
+for elem in elems:
+    print(elem.get_attribute("href"))
